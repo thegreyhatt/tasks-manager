@@ -5,10 +5,17 @@
         </div>
 
         <div class="card-body">
-            <ul class="nav" role="tablist">
+            {{-- <ul class="nav" role="tablist">
                 <li role="presentation">
                     <a href="{{ url('/admin') }}">
                         Dashboard
+                    </a>
+                </li>
+            </ul> --}}
+            <ul class="nav" role="tablist">
+                <li role="presentation">
+                    <a href="{{ route('tasks.index') }}">
+                        Tasks
                     </a>
                 </li>
             </ul>
