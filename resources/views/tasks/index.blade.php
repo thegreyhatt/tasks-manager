@@ -30,14 +30,27 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Name</th><th>Requested By</th><th>Date Requested</th><th>As Of</th><th>Status</th><th>Verified By</th><th>User Id</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Requested By</th>
+                                        <th>Date Requested</th>
+                                        <th>As Of</th>
+                                        <th>Status</th>
+                                        <th>Verified By</th>
+                                        <th>Added By</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($tasks as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td><td>{{ $item->requested_by }}</td><td>{{ $item->date_requested }}</td><td>{{ $item->as_of }}</td><td>{{ $item->status }}</td><td>{{ $item->verified_by }}</td><td>{{ $item->user_id }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->requested_by }}</td>
+                                        <td>{{ $item->date_requested }}</td>
+                                        <td>{{ $item->as_of }}</td>
+                                        <td>{{ $item->status }}</td>
+                                        <td>{{ $item->verified_by }}</td>
+                                        <td>{{ $item->user->name }}</td>
                                         <td>
                                             <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ route('tasks.edit', $item->id) }}" title="Edit Task"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
