@@ -1,14 +1,13 @@
-@extends('sbadmin2::page')
+@extends('layouts.app')
 
 @section('content')
-    {{-- <div class="container"> --}}
+    <div class="container">
         <div class="row">
-            {{-- @include('admin.sidebar') --}}
-            <div class="col-md-12">
-                <div class="card shadow">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tasks</h6>
-                    </div>
+            @include('admin.sidebar')
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">Tasks</div>
                     <div class="card-body">
                         <a href="{{ route('tasks.create') }}" class="btn btn-success btn-sm" title="Add New Task">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -79,5 +78,5 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
 @endsection
