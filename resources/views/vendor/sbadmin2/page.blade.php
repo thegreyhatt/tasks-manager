@@ -54,7 +54,7 @@
 
         <!-- Topbar Search -->
         @if(config('sbadmin2.topbar-search'))
-          @include('sbadmin2::partials.topbar-search')
+          {{-- @include('sbadmin2::partials.topbar-search') --}}
         @endif
 
         <!-- Topbar Navbar -->
