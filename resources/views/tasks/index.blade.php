@@ -37,7 +37,8 @@
                                         <th>As Of</th>
                                         <th>Status</th>
                                         <th>Verified By</th>
-                                        <th>Added By</th><th>Actions</th>
+                                        <th>Added By</th>
+                                        <th class="text-center" >Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,8 +52,8 @@
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->verified_by }}</td>
                                         <td>{{ $item->user->name }}</td>
-                                        <td>
-                                            {{-- <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> --}}
+                                   {{--      <td>
+                                            <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ route('tasks.edit', $item->id) }}" title="Edit Task"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
@@ -66,6 +67,30 @@
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
                                             {!! Form::close() !!}
+                                        </td> --}}
+                                        <td class="text-center" >
+                                            <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="navbarDropdown">
+                                                        {{-- <a class="dropdown-item" href="{{ route('accounts.show', $item->id) }}">View Account</a> --}}
+                                                        <a class="dropdown-item" href="{{ route('tasks.edit', $item->id) }}">Edit Task</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); if(confirm('Delete?')){document.getElementById('{{ $item->id }}').submit()};">
+                                                            {!! Form::open([
+                                                                'method'=>'DELETE',
+                                                                'url' => route('tasks.destroy', $item->id),
+                                                                'style' => 'display:inline',
+                                                                'id' => $item->id
+                                                            ]) !!}
+                                                            {!! Form::close() !!}
+                                                            Delete
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 @endforeach
