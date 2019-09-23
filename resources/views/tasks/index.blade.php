@@ -27,7 +27,7 @@
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table table-borderless table-hover table-condensed">
                                 <thead>
                                     <tr>
                                         <th>#</th>
