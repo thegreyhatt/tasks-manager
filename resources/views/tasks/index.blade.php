@@ -44,7 +44,7 @@
                                 @foreach($tasks as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td> <a href="{{ route('tasks.edit', $item->id) }}">{{ $item->name }}</a> </td>
                                         <td>{{ $item->requested_by }}</td>
                                         <td>{{ $item->date_requested }}</td>
                                         <td>{{ $item->as_of }}</td>
@@ -52,7 +52,7 @@
                                         <td>{{ $item->verified_by }}</td>
                                         <td>{{ $item->user->name }}</td>
                                         <td>
-                                            <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            {{-- <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> --}}
                                             <a href="{{ route('tasks.edit', $item->id) }}" title="Edit Task"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',

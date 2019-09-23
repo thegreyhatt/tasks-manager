@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('sbadmin2::page')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            {{-- @include('admin.sidebar') --}}
 
-            <div class="col-md-9">
-                <div class="card">
+            <div class="offset-3 col-md-6">
+                <div class="card shadow">
                     <div class="card-header">Create New Task</div>
                     <div class="card-body">
                         <a href="{{ route('tasks.index') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
