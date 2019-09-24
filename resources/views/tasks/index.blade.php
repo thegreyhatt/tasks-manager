@@ -31,14 +31,14 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
+                                        <th colspan="2">Name</th>
                                         <th>Requested By</th>
                                         <th>Date Requested</th>
                                         <th>As Of</th>
                                         <th>Status</th>
                                         <th>Verified By</th>
                                         <th>Added By</th>
-                                        <th class="text-center" >Actions</th>
+                                        {{-- <th class="text-center" >Actions</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,28 +46,6 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td> <a href="{{ route('tasks.edit', $item->id) }}">{{ $item->name }}</a> </td>
-                                        <td>{{ $item->requested_by }}</td>
-                                        <td>{{ $item->date_requested }}</td>
-                                        <td>{{ $item->as_of }}</td>
-                                        <td>{{ $item->status }}</td>
-                                        <td>{{ $item->verified_by }}</td>
-                                        <td>{{ $item->user->name }}</td>
-                                   {{--      <td>
-                                            <a href="{{ route('tasks.show', $item->id) }}" title="View Task"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ route('tasks.edit', $item->id) }}" title="Edit Task"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            {!! Form::open([
-                                                'method'=>'DELETE',
-                                                'url' => route('tasks.destroy', $item->id),
-                                                'style' => 'display:inline'
-                                            ]) !!}
-                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
-                                                        'type' => 'submit',
-                                                        'class' => 'btn btn-danger btn-sm',
-                                                        'title' => 'Delete Task',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
-                                                )) !!}
-                                            {!! Form::close() !!}
-                                        </td> --}}
                                         <td class="text-center" >
                                             <ul class="navbar-nav ml-auto">
                                                 <li class="nav-item dropdown">
@@ -92,6 +70,12 @@
                                                 </li>
                                             </ul>
                                         </td>
+                                        <td>{{ $item->requested_by }}</td>
+                                        <td>{{ $item->date_requested }}</td>
+                                        <td>{{ $item->as_of }}</td>
+                                        <td>{{ $item->status }}</td>
+                                        <td>{{ $item->verified_by }}</td>
+                                        <td>{{ $item->user->name }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
