@@ -1,11 +1,11 @@
 @extends('sbadmin2::page')
 
 @section('content')
-    <div class="container">
+    {{-- <div class="container"> --}}
         <div class="row">
             {{-- @include('admin.sidebar') --}}
 
-            <div class="offset-3 col-md-6">
+            <div class="offset-md-3 col-md-6">
                 <div class="card shadow">
                     <div class="card-header">Create New Task</div>
                     <div class="card-body">
@@ -31,5 +31,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 @endsection

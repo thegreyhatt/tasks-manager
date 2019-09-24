@@ -33,19 +33,15 @@
                                         <th>#</th>
                                         <th colspan="2">Name</th>
                                         <th>Requested By</th>
-                                        <th>Date Requested</th>
-                                        <th>As Of</th>
-                                        <th>Status</th>
-                                        <th>Verified By</th>
                                         <th>Added By</th>
-                                        {{-- <th class="text-center" >Actions</th> --}}
+                                        <th>Recorded</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($tasks as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td> <a href="{{ route('tasks.edit', $item->id) }}">{{ $item->name }}</a> </td>
+                                        <td> <a href="{{ route('tasks.show', $item->id) }}">{{ $item->name }}</a> </td>
                                         <td class="text-center" >
                                             <ul class="navbar-nav ml-auto">
                                                 <li class="nav-item dropdown">
@@ -71,11 +67,8 @@
                                             </ul>
                                         </td>
                                         <td>{{ $item->requested_by }}</td>
-                                        <td>{{ $item->date_requested }}</td>
-                                        <td>{{ $item->as_of }}</td>
-                                        <td>{{ $item->status }}</td>
-                                        <td>{{ $item->verified_by }}</td>
                                         <td>{{ $item->user->name }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($item->created_at))->diffForHumans() }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
