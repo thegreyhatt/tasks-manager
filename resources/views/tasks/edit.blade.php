@@ -5,7 +5,7 @@
         <div class="row">
             {{-- @include('admin.sidebar') --}}
 
-            <div class="offset-3 col-md-6">
+            <div class="offset-md-3 col-md-6">
                 <div class="card shadow">
                     <div class="card-header">Edit Task: {{ $task->name }}</div>
                     <div class="card-body">
