@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::resource('tasks', 'TasksController');
+	Route::get('print', 'PrintController@index')->name('print.index');
 });

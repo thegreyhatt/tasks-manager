@@ -2,6 +2,7 @@
 
 @section('sbadmin2_css')
   @yield('css')
+  @stack('css')
 @endsection
 
 
@@ -135,4 +136,5 @@
 
 @section('sbadmin2_js')
   @yield('js')
+  @stack('js')
 @endsection

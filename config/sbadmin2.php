@@ -78,6 +78,11 @@ return [
     		'url'	=>	'/tasks',
     		'icon'	=>	'fa-list',
     	],
+        [
+            'text'  =>  'Print',
+            'url'   =>  '/print',
+            'icon'  =>  'fa-print',
+        ],
     ],
 
 ];
