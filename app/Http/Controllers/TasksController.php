@@ -18,6 +18,7 @@ class TasksController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
+        $keyword = implode('%', str_split($keyword));
         $perPage = 25;
 
         if (!empty($keyword)) {
